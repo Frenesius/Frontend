@@ -54,7 +54,7 @@
 									        <td><input type="checkbox" name="checkboxParts" value="motherboard"/></td>									        
 									    </tr>
 									    <tr>
-									   		<td>Gpu</td>
+									   		<td>GPU</td>
 							        		<td><input type="checkbox" name="checkboxParts" value="gpu"/></td>
 							   		 	</tr>
 							   		 	<tr>
@@ -62,7 +62,7 @@
 							   		 		<td><input type="checkbox" name="checkboxParts" value="soundcard"/></td>
 							   		 	</tr>
 							   		 	<tr>
-							   		 		<td>Case</td>
+							   		 		<td>CASE</td>
 							   		 		<td><input type="checkbox" name="checkboxParts" value="case" /></td>
 							   		 	</tr>
 							   		 	<tr>
@@ -82,8 +82,8 @@
 							   		 		<td><input type="checkbox" name="checkboxParts" value="hdd" /></td>
 							   		 	</tr>
 							   		 	<tr>
-							   		 		<td>Memory</td>
-							   		 		<td><input type="checkbox" name="checkboxParts" value="memory" /></td>
+							   		 		<td>RAM</td>
+							   		 		<td><input type="checkbox" name="checkboxParts" value="ram" /></td>
 							   		 	</tr>
 							   		 	<tr>
 							   		 		<td><input type="submit" name="Submit" value="Submit" onclick='unload()' /> </td>
