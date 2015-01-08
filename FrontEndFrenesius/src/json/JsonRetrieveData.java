@@ -29,41 +29,46 @@ public class JsonRetrieveData {
 					//JSONObject jsonObject = (JSONObject) obj;
 					
 					//String naa = (String) jsonObject.get("cpu");
-			JSONObject obje = new JSONObject("{'cpu':{'SKU': 'GTX 970 GAMING 4G, V316-001R', 'Hoogte': '35mm', 'Hoogste HDMI-versie': 'HDMI 2.0', 'Hoogste DisplayPort versie': 'DisplayPort 1.2'}}");
+			JSONObject jsonObjectCPU = new JSONObject("{'cpu':{'SKU': 'GTX 970 GAMING 4G, V316-001R', 'Hoogte': '35mm', 'Hoogste HDMI-versie': 'HDMI 2.0', 'Hoogste DisplayPort versie': 'DisplayPort 1.2'}}");
+			JSONObject jsonObjectGPU = new JSONObject("{'gpu':{'BLA': '90YV0541-M0NA00, RoG Mars 760', 'Uitvoering': 'Asus Republic Of Gamers Mars 760', 'Geheugengrootte': '4GB', 'Videochipfabrikant': 'Nvidia', 'Geheugen Busbreedte': '256 bit', 'Geheugen Snelheid': '6,008GHz', 'Chipset generatie': 'GeForce 700 Serie', 'Serie': 'Republic Of Gamers', 'OpenGL versie': '4.3', 'Type koeling': 'Actieve fan', 'Tweakers ID': '357612', 'Aantal slots': '2x', 'Card Interface (Video)': 'PCI-e 3.0 x16', 'Laagste prijs': ' ', 'Geheugen Type (videokaarten)': 'GDDR5', 'Aantal aanbieders': '22 winkels', 'Aantal pins (videokaarten)': '2x 8 pins', 'Link Interface': 'Nvidia SLi', 'Nominale snelheid videochip': '1,006GHz'}}");
+			JSONObject jsonObjectRAM = new JSONObject("{'ram':{'jaja': '90YV0541-M0NA00, RoG Mars 760', 'Uitvoering': 'Asus Republic Of Gamers Mars 760', 'Geheugengrootte': '4GB', 'Videochipfabrikant': 'Nvidia', 'Geheugen Busbreedte': '256 bit', 'Geheugen Snelheid': '6,008GHz', 'Chipset generatie': 'GeForce 700 Serie', 'Serie': 'Republic Of Gamers', 'OpenGL versie': '4.3', 'Type koeling': 'Actieve fan', 'Tweakers ID': '357612', 'Aantal slots': '2x', 'Card Interface (Video)': 'PCI-e 3.0 x16', 'Laagste prijs': ' ', 'Geheugen Type (videokaarten)': 'GDDR5', 'Aantal aanbieders': '22 winkels', 'Aantal pins (videokaarten)': '2x 8 pins', 'Link Interface': 'Nvidia SLi', 'Nominale snelheid videochip': '1,006GHz'}}");
+			JSONObject jsonObjectHDD = new JSONObject("{'hdd':{}}");
+			JSONObject jsonObjectSSD = new JSONObject("{'ssd':{}}");
+			JSONObject jsonObjectPSU = new JSONObject("{'psu':{}}");
+			JSONObject jsonObjectCASE = new JSONObject("{'case':{}}");
+			JSONObject jsonObjectMotherBoard = new JSONObject("{'motherboard':{}}");
+			JSONObject jsonObjectOpticalDrive = new JSONObject("{'opticaldrive':{}}");
+			JSONObject jsonObjectSoundCard = new JSONObject("{'soundcard':{}}");
+			
+			ArrayList<String> JSONStrings = new ArrayList<String>();
 
-			
-			//String ab = obje.getString("cpu");
-			JSONObject aa = obje.getJSONObject("cpu");
-			
-			ArrayList<JSONObject> JSONObjectsArrayList = new ArrayList<JSONObject>();
-			
-		//jsonObjectsJ.add(aa);
+			String cpuJsonString = jsonObjectCPU.toString();
+			String gpuJsonString = jsonObjectGPU.toString();
+			String ramJsonString = jsonObjectRAM.toString();
+			String hddJsonString = jsonObjectHDD.toString();
+			String ssdJsonString = jsonObjectSSD.toString();
+			String psuJsonString = jsonObjectPSU.toString();
+			String caseJsonString = jsonObjectCASE.toString();
+			String motherboardJsonString = jsonObjectMotherBoard.toString();
+			String opticaldriveJsonString = jsonObjectOpticalDrive.toString();
+			String soundcardJsonString = jsonObjectSoundCard.toString();
 
-			//System.out.println(jsonObjectsJ);
+			JSONStrings.add(cpuJsonString);
+			JSONStrings.add(gpuJsonString);
+			JSONStrings.add(ramJsonString);
+			JSONStrings.add(hddJsonString);
+			JSONStrings.add(ssdJsonString);
+			JSONStrings.add(psuJsonString);
+			JSONStrings.add(caseJsonString);
+			JSONStrings.add(motherboardJsonString);
+			JSONStrings.add(opticaldriveJsonString);
+			JSONStrings.add(soundcardJsonString);
 			
-			// ---------------------------------------
 			
-			JSONObject CPU = obje.getJSONObject("SKU");
-			JSONObject GPU = obje.getJSONObject("");
-			JSONObject RAM = obje.getJSONObject("");
-			JSONObject HDD = obje.getJSONObject("");
-			JSONObject SSD = obje.getJSONObject("");
-			JSONObject PSU = obje.getJSONObject("");
-			JSONObject CASE = obje.getJSONObject("");
-			JSONObject motherBoard = obje.getJSONObject("");
-			JSONObject OpticalDrive = obje.getJSONObject("");
-			JSONObject soundCard = obje.getJSONObject("");
 			
-			JSONObjectsArrayList.add(CPU);
-			JSONObjectsArrayList.add(GPU);
-			JSONObjectsArrayList.add(RAM);
-			JSONObjectsArrayList.add(HDD);
-			JSONObjectsArrayList.add(SSD);
-			JSONObjectsArrayList.add(PSU);
-			JSONObjectsArrayList.add(CASE);
-			JSONObjectsArrayList.add(motherBoard);
-			JSONObjectsArrayList.add(OpticalDrive);
-			JSONObjectsArrayList.add(soundCard);
+			//System.out.println(JSONObjectsArrayList);
+			System.out.println(JSONStrings);
+			
 			
 //					} catch (FileNotFoundException e) {
 //						e.printStackTrace();
