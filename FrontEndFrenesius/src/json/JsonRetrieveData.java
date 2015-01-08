@@ -1,24 +1,16 @@
 package json;
 
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 public class JsonRetrieveData {
+	
 
+		static ArrayList<String> JSONStringsArrayList = new ArrayList<String>();
 
-	  //  static ArrayList<String> jsonStrings = new ArrayList<String>();
-
-	    
-	    
 		public static void main(String[] args) throws JSONException {
 			//JSONParser parser = new JSONParser();
 			//String url = "C:/Users/Abid/Desktop/Graphicscard.json";
@@ -40,7 +32,6 @@ public class JsonRetrieveData {
 			JSONObject jsonObjectOpticalDrive = new JSONObject("{'opticaldrive':{}}");
 			JSONObject jsonObjectSoundCard = new JSONObject("{'soundcard':{}}");
 			
-			ArrayList<String> JSONStrings = new ArrayList<String>();
 
 			String cpuJsonString = jsonObjectCPU.toString();
 			String gpuJsonString = jsonObjectGPU.toString();
@@ -53,30 +44,18 @@ public class JsonRetrieveData {
 			String opticaldriveJsonString = jsonObjectOpticalDrive.toString();
 			String soundcardJsonString = jsonObjectSoundCard.toString();
 
-			JSONStrings.add(cpuJsonString);
-			JSONStrings.add(gpuJsonString);
-			JSONStrings.add(ramJsonString);
-			JSONStrings.add(hddJsonString);
-			JSONStrings.add(ssdJsonString);
-			JSONStrings.add(psuJsonString);
-			JSONStrings.add(caseJsonString);
-			JSONStrings.add(motherboardJsonString);
-			JSONStrings.add(opticaldriveJsonString);
-			JSONStrings.add(soundcardJsonString);
+			JSONStringsArrayList.add(cpuJsonString);
+			JSONStringsArrayList.add(gpuJsonString);
+			JSONStringsArrayList.add(ramJsonString);
+			JSONStringsArrayList.add(hddJsonString);
+			JSONStringsArrayList.add(ssdJsonString);
+			JSONStringsArrayList.add(psuJsonString);
+			JSONStringsArrayList.add(caseJsonString);
+			JSONStringsArrayList.add(motherboardJsonString);
+			JSONStringsArrayList.add(opticaldriveJsonString);
+			JSONStringsArrayList.add(soundcardJsonString);
 			
-			
-			
-			//System.out.println(JSONObjectsArrayList);
-			System.out.println(JSONStrings);
-			
-			
-//					} catch (FileNotFoundException e) {
-//						e.printStackTrace();
-//					} catch (IOException e) {
-//						e.printStackTrace();
-//					} catch (ParseException e) {
-//						e.printStackTrace();
-//					}
+			System.out.println(JSONStringsArrayList);
 			
 //			@SuppressWarnings("unused")
 //			JSONParser parser = new JSONParser();
