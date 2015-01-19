@@ -34,7 +34,6 @@ public class OutputUser extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public OutputUser() {
-    	
         super();
     }
 
@@ -48,8 +47,9 @@ public class OutputUser extends HttpServlet {
 		JSONparseClass.addTheChosenUserComponentsToArrayList();
 		System.out.println(JSONparseClass.JSONStringsArrayList);
 		ServletContext context= getServletContext();
-		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.jsp");
-		rd.forward(request, response);
+		
+		RequestDispatcher dispatcher = context.getRequestDispatcher("/OutputUser.jsp");
+		dispatcher.forward(request, response);
 	
 	}
 
