@@ -37,10 +37,7 @@ public class UserRequest extends HttpServlet {
         super();        
     }
 
-    
-    JSONklass jklass = new JSONklass();
-    
-	public static ArrayList<String> hoi = new ArrayList<String>();
+	public static ArrayList<String> OneJSONStringArrayList = new ArrayList<String>();
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,17 +45,16 @@ public class UserRequest extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		response.setContentType("application/json");
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+		BufferedReader bufferedReaderFromUserInput = new BufferedReader(new InputStreamReader(request.getInputStream()));
 		 		 
-		parsedJSONString = br.readLine();
+		parsedJSONString = bufferedReaderFromUserInput.readLine();
 		
 		setParsedJSONString(parsedJSONString);
 		
-		hoi.add(getParsedJSONString());
+		OneJSONStringArrayList.add(getParsedJSONString());
 	
-		System.out.println(parsedJSONString);
 		
-		session.setAttribute("getArr", getListAR());
+		session.setAttribute("getArrayListFromUSR", getListAR());
 	
 		ServletContext context= getServletContext();
 		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.do");
@@ -74,7 +70,7 @@ public class UserRequest extends HttpServlet {
 	
 	public ArrayList<String> getListAR() {
 		
-		return hoi;
+		return OneJSONStringArrayList;
 		
 	}
 }

@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 
 
-	public class JSONklass {
+	public class JSONparseClass {
 
 		/**
 		 * 
@@ -20,8 +20,6 @@ import org.json.JSONObject;
 		
 		
 		private static final long serialVersionUID = 1L;
-		
-		public ArrayList opl = UserRequest.hoi;
 		
 		public static ArrayList<String> JSONStringsArrayList = new ArrayList<String>();
 		
@@ -62,18 +60,18 @@ import org.json.JSONObject;
 	
 		public static void subStringingJSONObject() throws JSONException {
 		
-			String userInputJSON = UserRequest.getParsedJSONString();
-			JSONObject j = new JSONObject(userInputJSON);
-			cpuStringJSONObject = j.optString("cpu");
-			gpuStringJSONObject = j.optString("gpu");
-			ramStringJSONObject = j.optString("ram");
-			hddStringJSONObject = j.optString("hdd");
-			ssdStringJSONObject = j.optString("ssd");
-			psuStringJSONObject = j.optString("psu");
-			caseStringJSONObject = j.optString("case");
-			motherboardStringJSONObject = j.optString("mob");
-			opticaldriveStringJSONObject = j.optString("opt");
-			soundcardStringJSONObject = j.optString("sound");
+			String userInputJSONFromChosenParts = UserRequest.getParsedJSONString();
+			JSONObject jsonObjectFromUser = new JSONObject(userInputJSONFromChosenParts);
+			cpuStringJSONObject = jsonObjectFromUser.optString("cpu");
+			gpuStringJSONObject = jsonObjectFromUser.optString("gpu");
+			ramStringJSONObject = jsonObjectFromUser.optString("ram");
+			hddStringJSONObject = jsonObjectFromUser.optString("hdd");
+			ssdStringJSONObject = jsonObjectFromUser.optString("ssd");
+			psuStringJSONObject = jsonObjectFromUser.optString("psu");
+			caseStringJSONObject = jsonObjectFromUser.optString("case");
+			motherboardStringJSONObject = jsonObjectFromUser.optString("mob");
+			opticaldriveStringJSONObject = jsonObjectFromUser.optString("opt");
+			soundcardStringJSONObject = jsonObjectFromUser.optString("sound");
 			
 		
 			if (cpuStringJSONObject.isEmpty()) {
@@ -118,14 +116,14 @@ import org.json.JSONObject;
 			
 		}
 		
-		public static void addToAR() {
+		public static void addTheChosenUserComponentsToArrayList() {
 			
 			try {
 				Start();
 			} catch (JSONException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			JSONStringsArrayList.add(cpuStringJSONObject);
 			JSONStringsArrayList.add(gpuStringJSONObject);
 			JSONStringsArrayList.add(ramStringJSONObject);
@@ -139,7 +137,7 @@ import org.json.JSONObject;
 			
 		}
 		
-		public ArrayList<String> getList() {
+		public ArrayList<String> getJSONArrayListStringList() {
 			
 			return JSONStringsArrayList;
 			

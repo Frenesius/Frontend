@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import org.json.simple.*;
 import org.json.*;
 
-import servlet.JSONklass;
+import servlet.JSONparseClass;
 
 
 /**
@@ -45,8 +45,8 @@ public class OutputUser extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
-		JSONklass.addToAR();
-		System.out.println(JSONklass.JSONStringsArrayList);
+		JSONparseClass.addTheChosenUserComponentsToArrayList();
+		System.out.println(JSONparseClass.JSONStringsArrayList);
 		ServletContext context= getServletContext();
 		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.jsp");
 		rd.forward(request, response);
