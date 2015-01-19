@@ -19,20 +19,18 @@ import javax.servlet.http.HttpSession;
 public class UserRequest extends HttpServlet {
 
 
-	public String parsedJSONString;
+	public static String parsedJSONString;
 	
-	public String getParsedJSONString() {
+	public static String getParsedJSONString() {
 		return parsedJSONString;
 	}
 
 	public void setParsedJSONString(String parsedJSONString) {
 		
-		this.parsedJSONString = parsedJSONString;
+		UserRequest.parsedJSONString = parsedJSONString;
 		
 	}
 	
-
-
 	private static final long serialVersionUID = 1L;
        
     public UserRequest() {
@@ -52,15 +50,12 @@ public class UserRequest extends HttpServlet {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
 		 		 
-		String button_param = request.getParameter("Data1");
-		
 		parsedJSONString = br.readLine();
 		
 		setParsedJSONString(parsedJSONString);
 		
 		hoi.add(getParsedJSONString());
 	
-
 		session.setAttribute("getArr", getListAR());
 		
 		

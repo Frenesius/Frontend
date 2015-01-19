@@ -15,16 +15,7 @@
 			<%  
 			
 		// retrieve your list from the request, with casting 
-		ArrayList<String> list = (ArrayList<String>) request.getAttribute("itemList");
-		ArrayList<Object> obj2 = (ArrayList<Object>) request.getAttribute("objlist");
-
-		// print the information about every category of the list
-		for(String item : list) 
-		{
-		   System.out.println(item);
-		}
 		
-		System.out.println(obj2);
 		%>
 
 </body>

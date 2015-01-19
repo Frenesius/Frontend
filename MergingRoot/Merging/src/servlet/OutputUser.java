@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.*;
+import org.json.*;
+
 import servlet.JSONklass;
 
 
@@ -35,26 +38,19 @@ public class OutputUser extends HttpServlet {
         super();
     }
 
-   JSONklass jsonClassPublic = new JSONklass();
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ArrayList<Object> obj = new ArrayList<Object>();
-		ArrayList<String> hoiaa = new ArrayList<String>();
-		HttpSession session2 = request.getSession(true);
-
+	//	ArrayList<Object> obj = new ArrayList<Object>();
+		//HttpSession session2 = request.getSession(true);
 		
-		jsonClassPublic.yo();
-		String hoi = "hoi mo";
-		
-		obj.add(session2.getAttribute("getArr"));
-		hoiaa.add(hoi);
-		
-		request.setAttribute("itemList", hoiaa); 
-		request.setAttribute("objlist", obj);
+		JSONklass.addToAR();
+		System.out.println(JSONklass.JSONStringsArrayList);
+	//	obj.add(session2.getAttribute("getArr"));
+		//request.setAttribute("objlist", obj);
 		ServletContext context= getServletContext();
 		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.jsp");
 		rd.forward(request, response);
