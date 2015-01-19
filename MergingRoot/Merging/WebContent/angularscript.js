@@ -22,19 +22,19 @@ angular.module('ui.bootstrap.demo').controller('JsonInputBestand', function ($sc
         			{
         		$scope.msg = $scope.master;
         		
-        			})
+        	})
          };
          
        
 
 // Any function returning a promise object can be used to load values asynchronously
     $scope.gpuselected = "";
-    $http.get("JSON/Graphicscard.json").then(function(response){
+    $http.get("JSON/Graphicscard.json").then(function(response) {
         $scope.componentsGPU = response.data;
     });
 
     $scope.mobselected = "";
-    $http.get("JSON/Graphicscard.json").then(function (response) {
+    $http.get("JSON/Graphicscard.json").then(function(response) {
         $scope.componentsMOB = response.data;
     })
 }
