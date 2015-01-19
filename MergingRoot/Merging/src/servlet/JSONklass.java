@@ -34,7 +34,7 @@ import org.json.JSONObject;
 			
 		
 		//	String[] tokens = jays.split("},");
-		//	
+			
 			
 			//	for (int i =0; i < tokens.length; i++) {
 					
@@ -42,10 +42,10 @@ import org.json.JSONObject;
 					
 			//	}
 				
-		//}/
+		//}
 
 		public static void Start() throws JSONException {
-			jsonMeth();
+			subStringingJSONObject();
 		}
 		
 		public static String cpuStringJSONObject;
@@ -60,7 +60,7 @@ import org.json.JSONObject;
 		public static String soundcardStringJSONObject;
 		
 	
-		public static void jsonMeth() throws JSONException {
+		public static void subStringingJSONObject() throws JSONException {
 		
 			String userInputJSON = UserRequest.getParsedJSONString();
 			JSONObject j = new JSONObject(userInputJSON);
@@ -71,9 +71,9 @@ import org.json.JSONObject;
 			ssdStringJSONObject = j.optString("ssd");
 			psuStringJSONObject = j.optString("psu");
 			caseStringJSONObject = j.optString("case");
-			motherboardStringJSONObject = j.optString("motherboard");
-			opticaldriveStringJSONObject = j.optString("opticaldrive");
-			soundcardStringJSONObject = j.optString("soundcard");
+			motherboardStringJSONObject = j.optString("mob");
+			opticaldriveStringJSONObject = j.optString("opt");
+			soundcardStringJSONObject = j.optString("sound");
 			
 		
 			if (cpuStringJSONObject.isEmpty()) {
@@ -119,6 +119,7 @@ import org.json.JSONObject;
 		}
 		
 		public static void addToAR() {
+			
 			try {
 				Start();
 			} catch (JSONException e) {

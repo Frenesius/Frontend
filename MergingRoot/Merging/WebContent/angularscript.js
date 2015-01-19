@@ -22,21 +22,58 @@ angular.module('ui.bootstrap.demo').controller('JsonInputBestand', function ($sc
         			{
         		$scope.msg = $scope.master;
         		
-        	})
+        			})
          };
-         
+   
        
 
 // Any function returning a promise object can be used to load values asynchronously
     $scope.gpuselected = "";
-    $http.get("JSON/Graphicscard.json").then(function(response) {
+    $http.get("JSON/Graphicscard.json").then(function(response){
         $scope.componentsGPU = response.data;
     });
 
+    
+        $scope.ramselected = "";
+    $http.get("JSON/Memory.json").then(function (response) {
+        $scope.componentsRAM = response.data;
+    })
+    
+            $scope.hddselected = "";
+    $http.get("JSON/Hdd.json").then(function (response) {
+        $scope.componentsHDD = response.data;
+    })
+    
+            $scope.ssdselected = "";
+    $http.get("JSON/Ssd.json").then(function (response) {
+        $scope.componentsSSD = response.data;
+    })
+    
+            $scope.psuselected = "";
+    $http.get("JSON/Psu.json").then(function (response) {
+        $scope.componentsPSU = response.data;
+    })
+    
+            $scope.caseselected = "";
+    $http.get("JSON/Case.json").then(function (response) {
+        $scope.componentsCASE = response.data;
+    })
+    
+    
     $scope.mobselected = "";
-    $http.get("JSON/Graphicscard.json").then(function(response) {
+    $http.get("JSON/Motherboard.json").then(function (response) {
         $scope.componentsMOB = response.data;
     })
+    
+            $scope.optselected = "";
+    $http.get("JSON/Opticaldrive.json").then(function (response) {
+        $scope.componentsOPT = response.data;
+    })
+            $scope.soundselected = "";
+    $http.get("JSON/Opticaldrive.json").then(function (response) {
+        $scope.componentsSOUND = response.data;
+    })
+    
 }
 )
 

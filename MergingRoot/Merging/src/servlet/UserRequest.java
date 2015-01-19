@@ -3,10 +3,10 @@ package servlet;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,8 +56,13 @@ public class UserRequest extends HttpServlet {
 		
 		hoi.add(getParsedJSONString());
 	
-		session.setAttribute("getArr", getListAR());
+		System.out.println(parsedJSONString);
 		
+		session.setAttribute("getArr", getListAR());
+	
+		ServletContext context= getServletContext();
+		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.do");
+		rd.forward(request, response);
 		
 	}
 	

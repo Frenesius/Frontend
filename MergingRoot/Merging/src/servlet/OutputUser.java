@@ -44,13 +44,9 @@ public class OutputUser extends HttpServlet {
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	//	ArrayList<Object> obj = new ArrayList<Object>();
-		//HttpSession session2 = request.getSession(true);
 		
 		JSONklass.addToAR();
 		System.out.println(JSONklass.JSONStringsArrayList);
-	//	obj.add(session2.getAttribute("getArr"));
-		//request.setAttribute("objlist", obj);
 		ServletContext context= getServletContext();
 		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.jsp");
 		rd.forward(request, response);
@@ -64,5 +60,4 @@ public class OutputUser extends HttpServlet {
 		
 		doGet(request, response);
 	}
-
 }
