@@ -17,6 +17,10 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/UserRequest.do")
 public class UserRequest extends HttpServlet {
+
+
+	public String parsedJSONString;
+	
 	public String getParsedJSONString() {
 		return parsedJSONString;
 	}
@@ -27,7 +31,7 @@ public class UserRequest extends HttpServlet {
 		
 	}
 	
-	public String parsedJSONString;
+
 
 	private static final long serialVersionUID = 1L;
        
@@ -38,13 +42,13 @@ public class UserRequest extends HttpServlet {
     
     JSONklass jklass = new JSONklass();
     
-	public ArrayList<String> hoi = new ArrayList<String>();
+	public static ArrayList<String> hoi = new ArrayList<String>();
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession(true);
-		
+		response.setContentType("application/json");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
 		 		 
@@ -53,16 +57,14 @@ public class UserRequest extends HttpServlet {
 		parsedJSONString = br.readLine();
 		
 		setParsedJSONString(parsedJSONString);
-	
-		hoi.add(getParsedJSONString());
 		
-	//	System.out.println(getListAR());
+		hoi.add(getParsedJSONString());
+	
 
 		session.setAttribute("getArr", getListAR());
 		
-		request.getRequestDispatcher("OutputUser.do").forward(request, response);
-		 
-}
+		
+	}
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -75,34 +77,4 @@ public class UserRequest extends HttpServlet {
 		return hoi;
 		
 	}
-	
-	
 }
-
-
-//JSONklass jk = new JSONklass();
-//jk.fillArrayList();
-
-
-//out.print(jk.getList());
-
-//try {
-//	
-//	
-//System.out.println(jk.getList());
-//} catch (JSONException e) {
-//	// TODO Auto-generated catch block
-//	e.printStackTrace();
-//}
-// if(button_param.equals("Save"))
-// {
-//	 response.sendRedirect("OutputUser");
-// }
-
-//
-//
-//while ((!= null)
-//		 {	
-//			
-//			 
-//		 }		
