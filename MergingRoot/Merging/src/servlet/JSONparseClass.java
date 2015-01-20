@@ -1,11 +1,11 @@
 package servlet;
 
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpSession;
-
 import servlet.UserRequest;
+import main.PcBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,7 +21,7 @@ import org.json.JSONObject;
 		
 		private static final long serialVersionUID = 1L;
 		
-		public static ArrayList<String> JSONStringsArrayList = new ArrayList<String>();
+		public static ArrayList JSONStringsArrayList = new ArrayList();
 		
 		
 		//public void testje() {
@@ -46,73 +46,76 @@ import org.json.JSONObject;
 			subStringingJSONObject();
 		}
 		
-		public static String cpuStringJSONObject;
-		public static String gpuStringJSONObject;
-		public static String ramStringJSONObject;
-		public static String hddStringJSONObject;
-		public static String ssdStringJSONObject;
-		public static String psuStringJSONObject;
-		public static String caseStringJSONObject;
-		public static String motherboardStringJSONObject;
-		public static String opticaldriveStringJSONObject;
-		public static String soundcardStringJSONObject;
 		
 	
 		public static void subStringingJSONObject() throws JSONException {
 		
 			String userInputJSONFromChosenParts = UserRequest.getParsedJSONString();
 			JSONObject jsonObjectFromUser = new JSONObject(userInputJSONFromChosenParts);
-			cpuStringJSONObject = jsonObjectFromUser.optString("cpu");
-			gpuStringJSONObject = jsonObjectFromUser.optString("gpu");
-			ramStringJSONObject = jsonObjectFromUser.optString("ram");
-			hddStringJSONObject = jsonObjectFromUser.optString("hdd");
-			ssdStringJSONObject = jsonObjectFromUser.optString("ssd");
-			psuStringJSONObject = jsonObjectFromUser.optString("psu");
-			caseStringJSONObject = jsonObjectFromUser.optString("case");
-			motherboardStringJSONObject = jsonObjectFromUser.optString("mob");
-			opticaldriveStringJSONObject = jsonObjectFromUser.optString("opt");
-			soundcardStringJSONObject = jsonObjectFromUser.optString("sound");
+			String tempCpu = jsonObjectFromUser.optString("cpu");
+			String tempGpu = jsonObjectFromUser.optString("gpu");
+			String tempRam = jsonObjectFromUser.optString("ram");
+			String tempHdd = jsonObjectFromUser.optString("hdd");
+			String tempSsd = jsonObjectFromUser.optString("ssd");
+			String tempPsu = jsonObjectFromUser.optString("psu");
+			String tempCase = jsonObjectFromUser.optString("case");
+			String tempMobo = jsonObjectFromUser.optString("mob");
+			String tempOpt = jsonObjectFromUser.optString("opt");
+			String tempSound = jsonObjectFromUser.optString("sound");
 			
-		
-			if (cpuStringJSONObject.isEmpty()) {
-				cpuStringJSONObject = null;
+			if (tempCpu.isEmpty()) {
+				tempCpu = null;
 			}
 						
-			if (gpuStringJSONObject.isEmpty()) {
-				cpuStringJSONObject = null;
+			if (tempGpu.isEmpty()) {
+				tempGpu = null;
 			}
 			
-			if (ramStringJSONObject.isEmpty()) {
-				ramStringJSONObject = null;
+			if (tempRam.isEmpty()) {
+				tempRam = null;
 			}
 			
-			if (hddStringJSONObject.isEmpty()) {
-				hddStringJSONObject = null;
+			if (tempHdd.isEmpty()) {
+				tempHdd = null;
 			}
 			
-			if (ssdStringJSONObject.isEmpty()) {
-				ssdStringJSONObject = null;
+			if (tempSsd.isEmpty()) {
+				tempSsd = null;
 			}
 			
-			if (psuStringJSONObject.isEmpty()) {
-				psuStringJSONObject = null;
+			if (tempPsu.isEmpty()) {
+				tempPsu = null;
 			}
 			
-			if (caseStringJSONObject.isEmpty()) {
-				caseStringJSONObject = null;
+			if (tempCase.isEmpty()) {
+				tempCase = null;
 			}
 			
-			if (motherboardStringJSONObject.isEmpty()) {
-				motherboardStringJSONObject = null;
+			if (tempMobo.isEmpty()) {
+				tempMobo = null;
 			}
 			
-			if (opticaldriveStringJSONObject.isEmpty()) {
-				opticaldriveStringJSONObject = null;
+			if (tempOpt.isEmpty()) {
+				tempOpt = null;
 			}
 			
-			if (soundcardStringJSONObject.isEmpty()) {
-				soundcardStringJSONObject = null;
+			if (tempSound.isEmpty()) {
+				tempSound = null;
 			}
+			
+			JSONStringsArrayList.add(0, tempCpu);
+			JSONStringsArrayList.add(1, tempGpu);
+			JSONStringsArrayList.add(2, tempRam);
+			JSONStringsArrayList.add(3, tempHdd);
+			JSONStringsArrayList.add(4, tempSsd);
+			JSONStringsArrayList.add(5, tempPsu);
+			JSONStringsArrayList.add(6, tempCase);
+			JSONStringsArrayList.add(7, tempMobo);
+			JSONStringsArrayList.add(8, tempOpt);
+			JSONStringsArrayList.add(9, tempSound);
+			
+		
+
 			
 		}
 		
@@ -124,17 +127,23 @@ import org.json.JSONObject;
 				e.printStackTrace();
 			}
 			
-			JSONStringsArrayList.add(cpuStringJSONObject);
-			JSONStringsArrayList.add(gpuStringJSONObject);
-			JSONStringsArrayList.add(ramStringJSONObject);
-			JSONStringsArrayList.add(hddStringJSONObject);
-			JSONStringsArrayList.add(ssdStringJSONObject);
-			JSONStringsArrayList.add(psuStringJSONObject);
-			JSONStringsArrayList.add(caseStringJSONObject);
-			JSONStringsArrayList.add(motherboardStringJSONObject);
-			JSONStringsArrayList.add(opticaldriveStringJSONObject);
-			JSONStringsArrayList.add(soundcardStringJSONObject);
-			
+
+//			System.out.println("PRNTING ARRAYLIST");
+//			for(int i = 0; i<JSONStringsArrayList.size();i++){
+//				System.out.println(JSONStringsArrayList.get(i)+"\n");
+//			}
+//			
+//			
+//			PcBuilder pcBuilder = new PcBuilder();
+//			
+//		
+//				try {
+//					pcBuilder.fullCheck(JSONStringsArrayList);
+//				} catch (SQLException e) {
+//					
+//					e.printStackTrace();
+//				}
+	
 		}
 		
 		public ArrayList<String> getJSONArrayListStringList() {

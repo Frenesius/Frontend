@@ -42,8 +42,6 @@ public class OutputUser extends HttpServlet {
 	 */
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
 		JSONparseClass.addTheChosenUserComponentsToArrayList();
 		System.out.println(JSONparseClass.JSONStringsArrayList);
 		ServletContext context= getServletContext();

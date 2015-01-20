@@ -23,18 +23,18 @@
 
 
 <div class='container-fluid' ng-controller="JsonInputBestand">
-	<div id= CPU>
-    	<h4>CPU</h4>
-    	<pre>SELECTED CPU:</pre>
-    	<input type="text" ng-model="selected.cpu" placeholder="Kies je CPU" typeahead="cpu as cpu.Product + ' ' + cpu.Uitvoering for cpu in componentsCPU | filter:$viewValue | limitTo:100" class="form-control">
-	</div>
 
 	<div id=GPU>
     	<h4>GPU</h4>
     	<pre>SELECTED GPU:</pre>
     	<input type="text" ng-model="selected.gpu" placeholder="Kies je GPU" typeahead="gpu as gpu.Product + ' ' + gpu.Uitvoering for gpu in componentsGPU | filter:$viewValue | limitTo:100" class="form-control">
     </div>	
-
+    
+	<div id= CPU>
+    	<h4>CPU</h4>
+    	<pre>SELECTED CPU:</pre>
+    	<input type="text" ng-model="selected.cpu" placeholder="Kies je CPU" typeahead="cpu as cpu.Product + ' ' + cpu.Uitvoering for cpu in componentsCPU | filter:$viewValue | limitTo:100" class="form-control">
+	</div>
 	
   <div id="RAM">
 	<h4>RAM</h4>

@@ -52,7 +52,7 @@ public class UserRequest extends HttpServlet {
 		setParsedJSONString(parsedJSONString);
 		
 		OneJSONStringArrayList.add(getParsedJSONString());
-	
+	    
 		
 		session.setAttribute("getArrayListFromUSR", getListAR());
 	
