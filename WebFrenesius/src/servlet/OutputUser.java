@@ -41,8 +41,11 @@ public class OutputUser extends HttpServlet {
 	 */
     
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		JSONparseClass.addTheChosenUserComponentsToArrayList();
+		System.out.println("[DEBUG] ArrayList \'JSONparseClass.JSONStringsArrayList\'");
 		System.out.println(JSONparseClass.JSONStringsArrayList);
+		System.out.println("[DEBUG] DONE ArrayList \'JSONparseClass.JSONStringsArrayList\'");
 		ServletContext context= getServletContext();
 		
 		RequestDispatcher dispatcher = context.getRequestDispatcher("/OutputUser.jsp");

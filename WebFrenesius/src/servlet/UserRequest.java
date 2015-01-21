@@ -37,28 +37,35 @@ public class UserRequest extends HttpServlet {
         super();        
     }
 
-	public static ArrayList<String> OneJSONStringArrayList = new ArrayList<String>();
+	//public static ArrayList<String> OneJSONStringArrayList = new ArrayList<String>();
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(true);
+		//HttpSession session = request.getSession(true);
 		response.setContentType("application/json");
 		
 		BufferedReader bufferedReaderFromUserInput = new BufferedReader(new InputStreamReader(request.getInputStream()));
 		 		 
 		parsedJSONString = bufferedReaderFromUserInput.readLine();
 		
+		
 		setParsedJSONString(parsedJSONString);
 		
-		OneJSONStringArrayList.add(getParsedJSONString());
+	//	OneJSONStringArrayList.add(getParsedJSONString());
 	    
 		
-		session.setAttribute("getArrayListFromUSR", getListAR());
+	//	session.setAttribute("getArrayListFromUSR", getListAR());
 	
 		ServletContext context= getServletContext();
-		RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.do");
-		rd.forward(request, response);
+		
+		if (parsedJSONString.isEmpty()) {
+			System.out.println("No component chosen");
+		} else {
+
+			RequestDispatcher rd = context.getRequestDispatcher("/OutputUser.do");
+			rd.forward(request, response);
+		}
 		
 	}
 	
@@ -68,9 +75,9 @@ public class UserRequest extends HttpServlet {
 		
 	}
 	
-	public ArrayList<String> getListAR() {
-		
-		return OneJSONStringArrayList;
-		
-	}
+//	public ArrayList<String> getListAR() {
+//		
+//		return OneJSONStringArrayList;
+//		
+//	}
 }

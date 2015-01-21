@@ -30,13 +30,14 @@ public class PcBuilder {
 		Motherboard mb = new Motherboard();
 		ArrayList selectedComponents = new ArrayList();
 	    ArrayList finishedComponents = new ArrayList();
-	    System.out.println("-----AbidStringJsonArrayPrint");
+	    System.out.println("[DEBUG] printing componentsInput -> fullChekc()");
 	    for(int a  = 0; a<componentsInput.size();a++)
 	    	System.out.println(componentsInput.get(a));
 	    
 	    System.out.println("=========");
 	    WebInput webinput = new WebInput();
 	    ArrayList bc = webinput.inputWebserverMatchToMobo();
+	    System.out.println("Printing matchMobo -> MOTHERBOARD MUST BE MATCHED");
 	    for(int b = 0; b<bc.size();b++)
 	    	System.out.println(bc.get(b));
 	     
